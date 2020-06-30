@@ -17,8 +17,7 @@ namespace compressTextFile
             string inputFilePath;
             string inputFileName;
             string outputFileName;
-            Console.WriteLine("args.Length: ", args.Length);
-            if (args.Length < 3)
+            if (args.Length < 4)
             {
                 action = 0;
                 Console.WriteLine("Please choose option:");
@@ -38,7 +37,7 @@ namespace compressTextFile
 
                 Console.WriteLine("Please enter the full path of the input file");
                 inputFilePath = Console.ReadLine();
-                Console.WriteLine("Please enter the name of the input file");
+                Console.WriteLine("Please enter the name of the input file ()");
                 inputFileName = Console.ReadLine();
                 Console.WriteLine("Please enter the name of the output file");
                 outputFileName = Console.ReadLine();
