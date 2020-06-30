@@ -18,7 +18,9 @@ namespace compressTextFile
             string inputFileName;
             string outputFileName;
 
-            if (args.Length < 4)
+            int.TryParse(args[0], out action);
+
+            if (args.Length < 4 || (args.Length == 4 && action != 1 && action != 2))
             {
                 action = 0;
                 Console.WriteLine("Please choose option:");

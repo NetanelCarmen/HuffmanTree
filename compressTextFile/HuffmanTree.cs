@@ -38,7 +38,7 @@ namespace HuffmanTest
                         writer.Write(kvp.Key);
                         writer.Write(kvp.Value);
                     }
-                    writer.Write(encodedData.Length);
+                    writer.Write(encodedData.Length - 1);
                     writer.Write(encodedData);
                 }
             }
@@ -70,7 +70,7 @@ namespace HuffmanTest
                     }
                     BuildTree(Frequencies);
                     int dataSize = reader.ReadInt32();
-                    byte[] allEncodedData = reader.ReadBytes(dataSize - 1);
+                    byte[] allEncodedData = reader.ReadBytes(dataSize);
 
                     string decodedData = dataDecode(new BitArray(allEncodedData));
 
