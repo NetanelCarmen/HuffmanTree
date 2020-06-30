@@ -53,14 +53,20 @@ namespace compressTextFile
             string inputFileFullName = inputFilePath + "\\" + inputFileName;
             string outputFileFullName = inputFilePath + "\\" + outputFileName;
 
+            bool isSucceeded;
 
-            if (action == 1)
+            if(action == 1 || action == 2)
             {
-                HuffmanTree.Encode(inputFileFullName, outputFileFullName);
-            }
-            else if(action == 2)
-            {
-                HuffmanTree.Decode(inputFileFullName, outputFileFullName);
+                if (action == 1)
+                {
+                    isSucceeded = HuffmanTree.Encode(inputFileFullName, outputFileFullName);
+                }
+                else
+                {
+                    isSucceeded = HuffmanTree.Decode(inputFileFullName, outputFileFullName);
+                }
+
+                Console.WriteLine(isSucceeded ? "The operation was successful" : "Operation failed, check if the input file exist");
             }
         }
     }

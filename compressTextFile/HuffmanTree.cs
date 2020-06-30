@@ -17,7 +17,6 @@ namespace HuffmanTest
 
             if (!File.Exists(inputFileName))
             {
-                Console.Write("File dosent exists");
                 return false;
             }
 
